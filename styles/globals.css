@@ -2,32 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+img{
+  max-height: 100%
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+input, textarea, select{
+  @apply border border-gray-300 rounded-md px-1 w-full;
+  @apply mb-2;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+input:focus, textarea:focus, select:focus{
+  @apply border-blue-900;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h1{
+  @apply text-blue-900 mb-2 mb-2 text-xl;
+}
+
+label{
+  @apply text-blue-900;
+}
+
+.btn-primary{
+  @apply bg-blue-900 text-white px-4 py-1 rounded-md;
+}
+
+table.basic{
+  @apply w-full;
+}
+
+table.basic thead tr td{
+  @apply bg-blue-100;
+}
+
+table.basic tr td{
+  @apply border border-blue-200 p-1;
+}
+
+table.basic a{
+  @apply bg-blue-900 text-white text-sm py-1 px-2 
+  rounded-md inline-flex gap-1 mr-1;
+}
+.btn-default, .btn-red{
+  @apply px-4 py-1 rounded-md;
+}
+.btn-red{
+  @apply bg-red-800 text-white;
+}
+
+.btn-default{
+  @apply bg-gray-500 text-white;
 }
