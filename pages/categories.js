@@ -10,7 +10,7 @@ function Categories({swal}){
     const [categories, setCategories] = useState('');
     useEffect(() => {
         fetchCategories();
-    })
+    }, [])
     function fetchCategories() {
         axios.get('/api/categories').then(result => {
             setCategories(result.data);
